@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("#txt1").keyup(function(){
+    $.get("gethint.php?q=" + $("#txt1").val(),function(data){
+	  $("#txtHint").text(data);
+    });
+  });
+});
+</script>
+</head>
+<body>
+<h3>Start typing a name in the input field below:</h3>
+<form action=""> 
+First name: <input type="text" id="txt1" autofocus />
+</form>
+<p>Suggestions: <span id="txtHint"></span></p> 
+</body>
+</html>
